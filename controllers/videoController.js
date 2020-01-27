@@ -1,4 +1,3 @@
-import {videos} from "../mockdb"
 import routes from "../routers/routes"
 
 export const home = (req, res) => {

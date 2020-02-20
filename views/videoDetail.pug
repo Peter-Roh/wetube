@@ -18,7 +18,6 @@ block content
                 |Uploaded by 
                 a(href=routes.userDetail(video.creator.id))=video.creator.name
                     img.u-avatar(src=video.creator.avatarUrl)
-                //현재 사이트에서 가입한 유저의 프로필 사진이 동영상을 올렸을때 보이지 않음
         .video__comments
             if video.comments.length == 1
                 span.video__comment-number 1 comment

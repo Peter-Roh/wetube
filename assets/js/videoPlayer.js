@@ -66,23 +66,19 @@ function goFullScreen() {
 
 const formatDate = seconds => {
   const secondsNumber = parseInt(seconds, 10);
-  let hours = Math.floor(secondsNumber / 3600);
-  let minutes = Math.floor((secondsNumber - hours * 3600) / 60);
-  let totalSeconds = secondsNumber - hours * 3600 - minutes * 60;
+  let minutes = Math.floor(secondsNumber / 60);
+  let totalSeconds = secondsNumber - minutes * 60;
 
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
   if (seconds < 10) {
     totalSeconds = `0${totalSeconds}`;
   }
-  return `${hours}:${minutes}:${totalSeconds}`;
+  return `${minutes}:${totalSeconds}`;
 };
 
-function setTotalTime() {
+async function setTotalTime() {
   const totalTimeString = formatDate(videoPlayer.duration);
   totalTime.innerHTML = totalTimeString;
   setInterval(getCurrentTime, 1000);
